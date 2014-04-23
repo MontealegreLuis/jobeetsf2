@@ -1,0 +1,57 @@
+{% extends 'JobeetJobeetBundle::base.html.twig' %}
+
+{% block body -%}
+    <ul class="breadcrumb">
+	    <li>
+	       <span class="icon-home"></span>
+	       <a href="{{ path('job') }}">Jobs</a><span class="divider">/</span>
+	    </li>
+        <li class="active">Job</li>
+    </ul>
+
+    <div class="page-header">
+        <h1>Job</h1>
+    </div>
+
+    <p>
+        <a href="{{ path('job_new') }}" class="btn btn-success">
+            Create a new job entry
+        </a>
+    </p>
+
+    <dl>
+        <dt>Type</dt>
+        <dd>{{ entity.type }}</dd>
+        <dt>Company</dt>
+        <dd>{{ entity.company }}</dd>
+        <dt>Logo</dt>
+        <dd>{{ entity.logo }}</dd>
+        <dt>Url</dt>
+        <dd>{{ entity.url }}</dd>
+        <dt>Position</dt>
+        <dd>{{ entity.position }}</dd>
+        <dt>Location</dt>
+        <dd>{{ entity.location }}</dd>
+        <dt>Description</dt>
+        <dd>{{ entity.description }}</dd>
+        <dt>How to apply</dt>
+        <dd>{{ entity.howToApply }}</dd>
+        <dt>Token</dt>
+        <dd>{{ entity.token }}</dd>
+        <dt>Ispublic</dt>
+        <dd>{{ entity.isPublic }}</dd>
+        <dt>Is activated</dt>
+        <dd>{{ entity.isActivated }}</dd>
+        <dt>Email</dt>
+        <dd>{{ entity.email }}</dd>
+        <dt>Expires at</dt>
+        <dd>{{ entity.expiresAt|date('Y-m-d H:i:s') }}</dd>
+    </dl>
+
+    <div class="btn-group">
+        <a href="{{ path('job_edit', { 'id': entity.id }) }}" class="btn">
+            Edit
+        </a>
+	    {{ form(delete_form) }}
+	</div>
+{% endblock %}

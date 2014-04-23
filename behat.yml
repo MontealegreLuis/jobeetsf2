@@ -1,0 +1,7 @@
+default:
+  paths:
+    features: features
+  context:
+    class:  Jobeet\Behat\Contexts\FeatureContext
+  extensions:
+    Behat\Symfony2Extension\Extension: ~

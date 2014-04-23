@@ -1,0 +1,9 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: ~
+    database_name: jobeet
+    database_user: jobeet_user
+    database_password: j0b33t_us3r
+
+    secret: ChangeMe

@@ -1,0 +1,2 @@
+jobeet:
+    resource: "@JobeetJobeetBundle/Resources/config/routing.yml"

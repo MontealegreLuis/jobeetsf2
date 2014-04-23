@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+        <title>Jobeet</title>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar">
+			    <div class="navbar-inner">
+				    <a class="brand" href="#">Jobeet</a>
+				    <ul class="nav">
+					    <li><a href="{{ path('job') }}">Jobs</a></li>
+					    <li><a href="{{ path('affiliate') }}">Affiliates</a></li>
+					    <li><a href="{{ path('category') }}">Categories</a></li>
+				    </ul>
+			    </div>
+		    </nav>
+	    {% block body %}{% endblock %}
+	    </div>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

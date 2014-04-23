@@ -1,0 +1,18 @@
+{% extends 'JobeetJobeetBundle::base.html.twig' %}
+
+{% block body -%}
+    <ul class="breadcrumb">
+	    <li>
+	       <span class="icon-home"></span>
+	       <a href="{{ path('job') }}">Jobs</a><span class="divider">/</span>
+	    </li>
+        <li class="active">Job creation</li>
+    </ul>
+
+    <div class="page-header">
+        <h1>Job creation</h1>
+    </div>
+
+    {{ form(form) }}
+
+{% endblock %}

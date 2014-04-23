@@ -1,0 +1,9 @@
+JobeetJobeetBundle_affiliate:
+    resource: "@JobeetJobeetBundle/Resources/config/routing/affiliate.xml"
+    prefix:   /affiliate
+JobeetJobeetBundle_category:
+    resource: "@JobeetJobeetBundle/Resources/config/routing/category.xml"
+    prefix:   /category
+JobeetJobeetBundle_job:
+    resource: "@JobeetJobeetBundle/Resources/config/routing/job.xml"
+    prefix:   /job

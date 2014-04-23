@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping" 
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Jobeet\JobeetBundle\Entity\Job" table="job" repository-class="Jobeet\JobeetBundle\Repository\JobRepository">
+    <indexes>
+      <index name="fk_job_category_idx" columns="category_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="token_UNIQUE" columns="token"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="job_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="type" type="string" column="type" length="255" nullable="true"/>
+    <field name="company" type="string" column="company" length="255" nullable="false"/>
+    <field name="logo" type="string" column="logo" length="255" nullable="true"/>
+    <field name="url" type="string" column="url" length="255" nullable="true"/>
+    <field name="position" type="string" column="position" length="255" nullable="false"/>
+    <field name="location" type="string" column="location" length="255" nullable="false"/>
+    <field name="description" type="string" column="description" length="4000" nullable="false"/>
+    <field name="howToApply" type="string" column="how_to_apply" length="4000" nullable="false"/>
+    <field name="token" type="string" column="token" length="255" nullable="false"/>
+    <field name="isPublic" type="boolean" column="is_public" nullable="false"/>
+    <field name="isActivated" type="boolean" column="is_activated" nullable="false"/>
+    <field name="email" type="string" column="email" length="255" nullable="false"/>
+    <field name="expiresAt" type="datetime" column="expires_at" nullable="false"/>
+    <field name="created" type="datetime">
+        <gedmo:timestampable on="create"/>
+    </field>
+    <field name="updated" type="datetime">
+        <gedmo:timestampable on="update"/>
+    </field>
+    <many-to-one field="category" target-entity="Category">
+      <join-columns>
+        <join-column name="category_id" referenced-column-name="category_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
